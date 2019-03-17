@@ -1,0 +1,53 @@
+.movie_container {
+    display: flex;
+}
+
+.movie_container .left {
+    background-color: palevioletred;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie_container .left a {
+    padding-top: 1rem;
+}
+
+.movie_container .right {
+    background-color: #00B83F;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie_container .up {
+    height: 2rem;
+    background-color: peru;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie_container .up input {
+    width: 70%;
+    border-radius: 10px 0 0 10px;
+}
+
+.movie_container .up button {
+    /* border-radius: 20%;*/
+    border-radius: 0 10px 10px 0;
+}
+
+.movie_container .content {
+    flex: 1;
+    background-color: palegoldenrod;
+}
+
+.movie_container  {
+    color: crimson;
+    font-weight: 700;
+}
+.current{
+    color: greenyellow;
+}

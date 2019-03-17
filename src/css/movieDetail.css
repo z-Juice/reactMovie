@@ -1,0 +1,15 @@
+.movieDetail_container{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.movieDetail_container span{
+   text-align: center;
+}
+
+.movieDetail_container img{
+    width: 80%;
+}
+.movieDetail_container p{
+    text-indent: 2em;
+}
