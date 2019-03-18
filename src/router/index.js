@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
 
 import Home from '../container/home'
 import Movie from '../container/movie'
-import Detail from '../container/detail'
 import Info from '../container/info'
 
 class MainRouter extends React.Component {
@@ -19,9 +18,7 @@ class MainRouter extends React.Component {
                     <div className="content">
                         <Switch>
                             <Route path="/home" component={Home}></Route>
-                            <Route path="/movie" component={Movie}>
-                                {/* <Route path="/detail" component={Detail}></Route> */}
-                            </Route>
+                            <Route path="/movie" component={Movie}></Route>
                             <Route path="/info" component={Info}></Route>
                         </Switch>
                     </div>
