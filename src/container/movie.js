@@ -1,5 +1,4 @@
 import React from 'react'
-// import Service from '../service/movieService'
 import { Switch, Route, Link } from 'react-router-dom'
 import List from '../container/list'
 import '../css/movie.css';
@@ -14,13 +13,7 @@ class Movie extends React.Component {
     }
 
     componentDidMount () {
-        // let that = this;
-        // Service.getMovieList({type: 'in_theaters'}).then(function(data){
-        //     that.setState({
-        //         title: data.title,
-        //         isShow: false
-        //     })
-        // })
+        
     }
 
     render () {
@@ -34,27 +27,15 @@ class Movie extends React.Component {
                     </div>
                     <div className="right">
                         <div className="content">
-                            {this.props.children}
+                            <Switch>
+                                <Route path="/movie/list/:type" component={List}></Route>
+                            </Switch>
                         </div>
                     </div>
                 </div>
-                <Switch>
-                    <Route path="/movie/list/:type" component={List}></Route>
-                </Switch>
             </div>
         )
-        // if (this.state.isShow) {
-        //     return (
-        //         <h1>正在加载请稍后...</h1>
-        //     )
-        // } else {
-        //     return(
-        //         <div>
-        //             <h2>{this.state.title}</h2>
-        //             <p></p>
-        //         </div>
-        //     )
-        // }
+        
     }
 }
 
