@@ -6,13 +6,28 @@ class List extends React.Component {
     constructor () {
         super();
         this.state = {
+            movieType: 'in_theaters',
             movieData: {},
             isShow: true
         }
     }
 
     componentDidMount () {
-        this.getMovieList(this.props.match.params.type);
+        let type = this.props.match.params.type;
+        if(type){
+            this.getMovieList(type);
+        }else{
+            this.getMovieList(this.state.movieType);
+        }
+        
+    }
+
+    //在同一个页面相互跳转时触发
+    componentWillReceiveProps (nowProps) {
+        this.setState({
+            isShow: true
+        })
+        this.getMovieList(nowProps.match.params.type);
     }
 
     getMovieList (type) {
@@ -51,7 +66,7 @@ class List extends React.Component {
     renderMovieItem (item) {
         return (
             <div key={item.id} className="item">
-                <img src={item.images.medium} />
+                {/* <img src={item.images.medium} alt=""/> */}
                 <div className="right">
                     <h1>{item.title}</h1>
                     <span>{item.year}</span>
