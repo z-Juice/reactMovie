@@ -10,6 +10,7 @@ class List extends React.Component {
             movieData: {},
             isShow: true
         }
+        this.gotoMovie = this.gotoMovie.bind(this);
     }
 
     componentDidMount () {
@@ -47,6 +48,17 @@ class List extends React.Component {
         )
     }
 
+    //跳转分为两步
+    // static contextTypes = {
+    //     router: React.PropTypes.object
+    // }
+
+    //跳转电影详情页面
+    gotoMovie (id) {
+        this.props.history.push(`/movie/detail/${id}`)
+        // this.context.router.push(`/movie/detail/${id}`)
+    }
+
     //渲染电影列表数据
     renderMovieList (data) {
         let that = this;
@@ -65,7 +77,7 @@ class List extends React.Component {
     //渲染单条数据
     renderMovieItem (item) {
         return (
-            <div key={item.id} className="item">
+            <div key={item.id} className="item" onClick={()=>{this.gotoMovie(item.id)}}>
                 {/* <img src={item.images.medium} alt=""/> */}
                 <div className="right">
                     <h1>{item.title}</h1>

@@ -1,5 +1,5 @@
 /**
- * Created by J on 2017/3/27.
+ * Created by ZZY on 2018/3/27.
  */
 //请求数据 fetch-jsonp来请求数据
 import fetchJsonp from 'fetch-jsonp'
@@ -10,11 +10,23 @@ export  default {
     getMovieList(config){
         let url=`https://api.douban.com/v2/movie/${config.type}`;
        return fetchJsonp(url,{
+            timeout: 8000,
             jsonpCallback:'callback'
         })
             .then(function (response) {
                 return response.json();
             })
 
+    },
+    //获取电影详细页
+    getMovieDetail(config){
+        let url=`https://api.douban.com/v2/movie/subject/${config.id}`;
+        return fetchJsonp(url,{
+            timeout: 8000,
+            jsonpCallback:'callback'
+        })
+            .then(function (response) {
+                return response.json();
+            })
     }
 }

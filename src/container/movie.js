@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
 import List from '../container/list'
+import Detail from '../container/detail'
 import '../css/movie.css';
 
 class Movie extends React.Component {
@@ -29,6 +30,7 @@ class Movie extends React.Component {
                         <div className="content">
                             <Switch>
                                 <Route path="/movie/list/:type" component={List}></Route>
+                                <Route path="/movie/detail/:id" component={Detail}></Route>
                             </Switch>
                         </div>
                     </div>
