@@ -1,9 +1,14 @@
 import React from 'react'
+import Cart from '../container/Cart'
+import Products from '../container/Products'
 
 class Home extends React.Component {
     render () {
         return (
-            <h2>主页1</h2>
+           <div>
+               <Products />
+               <Cart />
+           </div>
         )
     }
 }

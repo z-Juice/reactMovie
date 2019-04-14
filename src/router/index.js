@@ -17,7 +17,7 @@ class MainRouter extends React.Component {
                     </div>
                     <div className="content">
                         <Switch>
-                            <Route path="/home" component={Home}></Route>
+                            <Route path="/" component={Home}></Route>
                             <Route path="/movie" component={Movie}></Route>
                             <Route path="/info" component={Info}></Route>
                         </Switch>
