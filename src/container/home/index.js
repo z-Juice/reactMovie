@@ -1,11 +1,12 @@
 import React from 'react'
-import Cart from '../container/Cart'
-import Products from '../container/Products'
+import Cart from './Cart'
+import Products from './Products'
+import './home.css'
 
 class Home extends React.Component {
     render () {
         return (
-           <div>
+           <div className='home'>
                <Products />
                <Cart />
            </div>

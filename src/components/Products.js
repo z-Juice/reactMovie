@@ -12,7 +12,7 @@ class Products extends Component {
     render () {
         const { products, addToCart } = this.props
         return (
-            <div>
+            <div className='products'>
                 <h2>Products</h2>
                 <ul>
                     {products.map(item => (

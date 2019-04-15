@@ -1,0 +1,12 @@
+.home {
+  height: 100%;
+}
+.products {
+  height: 50%;
+  background-color: skyblue;
+}
+.cart {
+  height: 50%;
+  background-color: lightblue;
+}
+

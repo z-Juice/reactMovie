@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Mainrouter from './router';
-import './css/root.css';
-import './css/app.css';
+import '@/assets/css/style.css';
 
 class App extends Component {
   render() {

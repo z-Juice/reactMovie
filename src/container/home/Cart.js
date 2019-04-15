@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import Cart from '../components/Cart'
-import { checkout } from '../actions'
+import Cart from '../../components/Cart'
+import { checkout } from '../../actions'
 
 const getCartProducts = state => {
     return state.cart.items.map(cartItem => {

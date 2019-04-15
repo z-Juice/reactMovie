@@ -4,7 +4,7 @@ class Cart extends Component {
     render () {
         const { cartProducts, totalPrice, checkout, checkoutStatus } = this.props;
         return (
-            <div>
+            <div className='cart'>
                 <h2>Cart</h2>
                 <ul>
                     {cartProducts.map(item => (

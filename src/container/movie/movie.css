@@ -1,10 +1,12 @@
 .movie_container {
     display: flex;
+    height: 100%;
 }
 
 .movie_container .left {
     background-color: palevioletred;
     width: 20%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,8 +19,10 @@
 .movie_container .right {
     background-color: #00B83F;
     width: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .movie_container .up {
@@ -35,7 +39,6 @@
 }
 
 .movie_container .up button {
-    /* border-radius: 20%;*/
     border-radius: 0 10px 10px 0;
 }
 
@@ -50,4 +53,49 @@
 }
 .current{
     color: greenyellow;
+}
+
+/*List*/
+.movieList_container{
+    overflow-y: scroll;
+}
+
+.movieList_container .item{
+    background-color:yellowgreen;
+    height: 11rem;
+    display: flex;
+}
+.movieList_container .left{
+    height: 10rem;
+    width: 9rem;
+}
+
+.movieList_container .right{
+    height: 10rem;
+}
+
+.movieList_showBottom{
+    display: block;
+    height: auto;
+    text-align: center;
+}
+
+.movieList_hideBottom{
+    display: none;
+}
+
+/*Detail*/
+.movieDetail_container{
+    display: flex;
+    flex-direction: column;
+}
+.movieDetail_container span{
+   text-align: center;
+}
+
+.movieDetail_container img{
+    width: 80%;
+}
+.movieDetail_container p{
+    text-indent: 2em;
 }

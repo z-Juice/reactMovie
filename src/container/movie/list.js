@@ -1,6 +1,5 @@
 import React from 'react'
-import Service from '../service/movieService'
-import '../css/movieList.css';
+import Service from '../../service/movieService'
 
 class List extends React.Component {
     constructor () {

@@ -1,6 +1,5 @@
 import React from 'react'
-import Service from '../service/movieService'
-import '../css/movieDetail.css';
+import Service from '../../service/movieService'
 
 class Detail extends React.Component {
     constructor () {
@@ -30,7 +29,7 @@ class Detail extends React.Component {
     //渲染页面
     renderMovieDetail (data) {
         return(
-            <div className="movieList_container">
+            <div className="movieDetail_container">
                 <span>
                     <img src={data.images.large} alt="" />
                 </span>
