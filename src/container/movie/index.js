@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, NavLink } from 'react-router-dom'
 import List from './list'
 import Detail from './detail'
 import './movie.css';
@@ -21,9 +21,9 @@ class Movie extends React.Component {
         return (
           <div className="movie_container">
               <div className="left">
-                  <Link to="/movie/list/in_theaters">正在上映</Link>
-                  <Link to="/movie/list/coming_soon">即将上映</Link>
-                  <Link to="/movie/list/top250">top250</Link>
+                  <NavLink to="/movie/list/in_theaters" activeClassName="active">正在上映</NavLink>
+                  <NavLink to="/movie/list/coming_soon" activeClassName="active">即将上映</NavLink>
+                  <NavLink to="/movie/list/top250" activeClassName="active">top250</NavLink>
               </div>
               <div className="right">
                   <Switch>

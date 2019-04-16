@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch, Link, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom'
 
 import Home from '../container/home/'
 import Movie from '../container/movie/'
@@ -11,9 +11,9 @@ class MainRouter extends React.Component {
             <BrowserRouter>
                 <div className="app_container">
                     <div className="header">
-                        <Link to="/home">首页</Link>
-                        <Link to="/movie">电影</Link>
-                        <Link to="/ucenter">我的</Link>
+                        <NavLink to="/home" activeClassName="active">首页</NavLink>
+                        <NavLink to="/movie" activeClassName="active">电影</NavLink>
+                        <NavLink to="/ucenter" activeClassName="active">我的</NavLink>
                     </div>
                     <div className="content">
                         <Switch>

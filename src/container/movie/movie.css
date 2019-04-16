@@ -16,6 +16,10 @@
     padding-top: 1rem;
 }
 
+.movie_container .left .active {
+  color: crimson;
+}
+
 .movie_container .right {
     background-color: #00B83F;
     width: 80%;

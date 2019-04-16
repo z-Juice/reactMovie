@@ -27,7 +27,7 @@ a:hover{
 }
 
 /*头部*/
-.app_container .header{
+.app_container .header {
     position: fixed;
     top: 0;
     left: 0;
@@ -39,13 +39,15 @@ a:hover{
     align-items: center;
     z-index: 1;
 }
-
-.app_container .header a{
+.app_container .header a {
     text-align: center;
     flex: 1;
 }
+.app_container .header .active {
+  color: crimson;
+}
 
-.app_container .content{
+.app_container .content {
     height: 100%;
     border-top: 40px solid transparent;
 }
