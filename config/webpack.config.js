@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const resolve = require('resolve');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const px2rem = require('postcss-px2rem');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -39,6 +40,8 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -97,6 +100,7 @@ module.exports = function(webpackEnv) {
               },
               stage: 3,
             }),
+            px2rem({remUnit: 100})
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
@@ -444,6 +448,39 @@ module.exports = function(webpackEnv) {
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
                 'sass-loader'
+              ),
+            },
+            // Opt-in support for LESS (using .scss or .less extensions).
+            // By default we support LESS Modules with the
+            // extensions .module.scss or .module.less
+            {
+              test: lessRegex,
+              exclude: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                },
+                'less-loader'
+              ),
+              // Don't consider CSS imports dead code even if the
+              // containing package claims to have no side effects.
+              // Remove this when webpack adds a warning or an error for this.
+              // See https://github.com/webpack/webpack/issues/6571
+              sideEffects: true,
+            },
+            // Adds support for CSS Modules, but using LESS
+            // using the extension .module.scss or .module.less
+            {
+              test: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  modules: true,
+                  getLocalIdent: getCSSModuleLocalIdent,
+                },
+                'less-loader'
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.

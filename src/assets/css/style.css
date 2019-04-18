@@ -1,11 +1,16 @@
 /*全局会用到的样式*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
 html,body{
     height: 100%;
     width: 100%;
 }
-* {
-    padding: 0;
-    margin: 0;
+
+body {
+    font-size: 10%;
 }
 
 ul,li{

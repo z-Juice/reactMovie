@@ -13,13 +13,8 @@ class List extends React.Component {
     }
 
     componentDidMount () {
-        let type = this.props.match.params.type;
-        if(type){
-            this.getMovieList(type);
-        }else{
-            this.getMovieList(this.state.movieType);
-        }
-        
+        //获取数据
+        this.getMovieType();
     }
 
     //在同一个页面相互跳转时触发
@@ -27,9 +22,21 @@ class List extends React.Component {
         this.setState({
             isShow: true
         })
-        this.getMovieList(nowProps.match.params.type);
+        //获取数据
+        this.getMovieType();
     }
 
+    //获取并判断列表参数
+    getMovieType () {
+        let type = this.props.match.params.type;
+        if(type){
+            this.getMovieList(type);
+        }else{
+            this.getMovieList(this.state.movieType);
+        }
+    }
+
+    //获取列表数据
     getMovieList (type) {
         let that = this;
         Service.getMovieList({type: type}).then(function(data){

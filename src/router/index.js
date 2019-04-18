@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, NavLink, Redirect } from 'react-router-dom'
 
 import Home from '../container/home/'
 import Movie from '../container/movie/'

@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route, NavLink } from 'react-router-dom'
 import List from './list'
 import Detail from './detail'
-import './movie.css';
+import './movie.less';
 
 class Movie extends React.Component {
     constructor () {
