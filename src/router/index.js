@@ -12,7 +12,7 @@ class MainRouter extends React.Component {
                 <div className="app_container">
                     <div className="header">
                         <NavLink to="/home" activeClassName="active">首页</NavLink>
-                        <NavLink to="/movie" activeClassName="active">电影</NavLink>
+                        <NavLink to="/movie/list/in_theaters" activeClassName="active">电影</NavLink>
                         <NavLink to="/ucenter" activeClassName="active">我的</NavLink>
                     </div>
                     <div className="content">

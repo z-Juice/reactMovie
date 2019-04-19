@@ -1,7 +1,7 @@
 import React from 'react'
 import Cart from './Cart'
 import Products from './Products'
-import './home.css'
+import './home.less'
 
 class Home extends React.Component {
     render () {
